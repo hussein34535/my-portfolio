@@ -94,8 +94,8 @@ export default function Home() {
       {/* ── Stats ── */}
       <div className="stats">
         <div className="stat-item">
-          <div className="stat-num">3+</div>
-          <div className="stat-label">تطبيقات مكتملة</div>
+          <div className="stat-num">15+</div>
+          <div className="stat-label">تطبيق وموقع</div>
         </div>
         <div className="stat-item">
           <div className="stat-num">Flutter</div>
