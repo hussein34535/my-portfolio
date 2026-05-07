@@ -3,6 +3,20 @@ import ProjectCard from "./components/ProjectCard";
 export default function Home() {
   const projects = [
     {
+      id: "hwasi",
+      title: "hwasi",
+      titleEn: "Luxury AI E-Commerce",
+      description: "تطبيق متجر إلكتروني فاخر يقدم تجربة تسوق أسطورية. يتميز بشات ذكاء اصطناعي (AI) يتيح للمستخدمين تجربة الملابس افتراضياً قبل الشراء. مبني بـ Flutter بتصميم Legendary UI وباك اند قوي باستخدام Node.js و Supabase.",
+      tags: ["Flutter", "AI Try-On", "Node.js", "Supabase", "Luxury UI"],
+      iconClass: "icon-hwasi",
+      themeClass: "card-hwasi",
+      images: ["/hwasi-1.jpg", "/hwasi-2.jpg", "/hwasi-3.jpg", "/hwasi-4.jpg", "/hwasi-5.jpg"],
+      icon: (
+        <img src="/hwasi-logo.png" alt="hwasi Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
+      ),
+      reverse: false,
+    },
+    {
       id: "tv",
       title: "7esen TV",
       titleEn: "Live Sports & Streaming",
@@ -14,7 +28,7 @@ export default function Home() {
       icon: (
         <img src="/tv-logo.jpg" alt="7eSen TV Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
       ),
-      reverse: false,
+      reverse: true,
     },
     {
       id: "vpn",
@@ -28,7 +42,7 @@ export default function Home() {
       icon: (
         <img src="/vpn-logo.jpg" alt="WaledNet VPN Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
       ),
-      reverse: true,
+      reverse: false,
     },
     {
       id: "quiz",
@@ -41,20 +55,6 @@ export default function Home() {
       images: ["/quiz-1.jpg", "/quiz-2.jpg", "/quiz-3.jpg", "/quiz-4.jpg", "/quiz-5.jpg", "/quiz-6.jpg", "/quiz-7.jpg", "/quiz-8.jpg"],
       icon: (
         <img src="/quiz-logo.png" alt="كازينو الألعاب Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
-      ),
-      reverse: false,
-    },
-    {
-      id: "hwasi",
-      title: "hwasi",
-      titleEn: "Luxury AI E-Commerce",
-      description: "تطبيق متجر إلكتروني فاخر يقدم تجربة تسوق أسطورية. يتميز بشات ذكاء اصطناعي (AI) يتيح للمستخدمين تجربة الملابس افتراضياً قبل الشراء. مبني بـ Flutter بتصميم Legendary UI وباك اند قوي باستخدام Node.js و Supabase.",
-      tags: ["Flutter", "AI Try-On", "Node.js", "Supabase", "Luxury UI"],
-      iconClass: "icon-hwasi",
-      themeClass: "card-hwasi",
-      images: ["/hwasi-1.jpg", "/hwasi-2.jpg", "/hwasi-3.jpg", "/hwasi-4.jpg"],
-      icon: (
-        <img src="/hwasi-logo.png" alt="hwasi Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
       ),
       reverse: true,
     },
