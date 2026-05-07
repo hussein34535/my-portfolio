@@ -24,7 +24,7 @@ export default function Home() {
       tags: ["Next.js 16", "Express", "Supabase", "Video Sessions", "Mental Health"],
       iconClass: "icon-iwaa",
       themeClass: "card-iwaa",
-      images: ["/iwaa-1.jpg", "/iwaa-2.jpg", "/iwaa-3.jpg", "/iwaa-4.jpg", "/iwaa-5.jpg"],
+      images: ["/iwaa-1.jpg", "/iwaa-2.jpg", "/iwaa-3.jpg", "/iwaa-4.jpg", "/iwaa-5.jpg", "/iwaa-6.jpg", "/iwaa-7.jpg", "/iwaa-8.jpg", "/iwaa-9.jpg", "/iwaa-10.jpg"],
       icon: (
         <img src="/iwaa-logo.png" alt="Iwaa Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
       ),
