@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7esen — Apps Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold:    #EF9F27;
+      --gold-lo: rgba(239,159,39,0.12);
+      --gold-bd: rgba(239,159,39,0.30);
+      --sky:     #378ADD;
+      --sky-lo:  rgba(55,138,221,0.12);
+      --sky-bd:  rgba(55,138,221,0.30);
+      --em:      #1D9E75;
+      --em-lo:   rgba(29,158,117,0.12);
+      --em-bd:   rgba(29,158,117,0.30);
+      --ember:   #D85A30;
+      --bg:      #08080f;
+      --bg-card: #0e0e1b;
+      --bg-card-h:#131328;
+      --bd:      rgba(255,255,255,0.07);
+      --bd-h:    rgba(255,255,255,0.13);
+      --text:    #f0ede6;
+      --muted:   #868497;
+      --dim:     #4e4c60;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html { scroll-behavior:smooth; }
+
+    body {
+      font-family:'Cairo',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      direction:rtl;
+      overflow-x:hidden;
+    }
+
+    /* ── Dot grid bg ── */
+    body::before {
+      content:'';
+      position:fixed;
+      inset:0;
+      background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size:28px 28px;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    /* ── Ambient top glow ── */
+    body::after {
+      content:'';
+      position:fixed;
+      top:-200px; left:50%;
+      transform:translateX(-50%);
+      width:800px; height:400px;
+      background:radial-gradient(ellipse, rgba(239,159,39,0.07) 0%, transparent 70%);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .wrap {
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 24px;
+      position:relative;
+      z-index:1;
+    }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .hero {
+      padding:100px 0 64px;
+      text-align:center;
+    }
+
+    .hero-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:11px;
+      letter-spacing:3px;
+      color:var(--gold);
+      border:0.5px solid var(--gold-bd);
+      padding:5px 14px;
+      border-radius:100px;
+      margin-bottom:28px;
+      font-weight:500;
+    }
+    .hero-badge-dot {
+      width:5px; height:5px;
+      background:var(--gold);
+      border-radius:50%;
+      animation:pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:0.4;transform:scale(0.7)}
+    }
+
+    .hero-brand {
+      font-family:'Bebas Neue',cursive;
+      font-size:clamp(72px,14vw,110px);
+      letter-spacing:8px;
+      color:var(--gold);
+      line-height:1;
+      margin-bottom:4px;
+    }
+
+    .hero-sub {
+      font-size:13px;
+      color:var(--dim);
+      letter-spacing:5px;
+      font-weight:300;
+      margin-bottom:28px;
+    }
+
+    .hero-line {
+      width:48px; height:2px;
+      background:var(--gold);
+      margin:0 auto 28px;
+      opacity:0.5;
+    }
+
+    .hero-desc {
+      font-size:16px;
+      color:var(--muted);
+      max-width:480px;
+      margin:0 auto;
+      line-height:1.85;
+      font-weight:300;
+    }
+
+    /* ══════════════════════════════
+       STATS BAR
+    ══════════════════════════════ */
+    .stats {
+      display:flex;
+      justify-content:center;
+      gap:60px;
+      padding:40px 0;
+      border-top:0.5px solid var(--bd);
+      border-bottom:0.5px solid var(--bd);
+      margin-bottom:64px;
+      flex-wrap:wrap;
+    }
+    .stat-item { text-align:center; }
+    .stat-num {
+      font-family:'Bebas Neue',cursive;
+      font-size:40px;
+      color:var(--gold);
+      line-height:1;
+    }
+    .stat-label {
+      font-size:13px;
+      color:var(--dim);
+      margin-top:4px;
+      letter-spacing:1px;
+    }
+
+    /* ══════════════════════════════
+       SECTION HEADER
+    ══════════════════════════════ */
+    .sec-head {
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:48px;
+    }
+    .sec-line { flex:1; height:0.5px; background:var(--bd); }
+    .sec-label {
+      font-family:'Bebas Neue',cursive;
+      font-size:14px;
+      letter-spacing:4px;
+      color:var(--dim);
+    }
+
+    /* ══════════════════════════════
+       PROJECT LIST
+    ══════════════════════════════ */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      padding-bottom: 100px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--bd);
+      border-radius: 24px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, background 0.4s ease;
+      display: flex;
+      gap: 48px;
+      align-items: center;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-8px);
+      background: var(--bg-card-h);
+    }
+    
+    /* Alternating layout */
+    .project-card.reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* Ambient glow */
+    .card-glow {
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      opacity: 0.04;
+      transition: opacity 0.4s;
+      pointer-events: none;
+      filter: blur(60px);
+      z-index: 0;
+    }
+    .project-card.reverse .card-glow {
+      right: auto;
+      left: -100px;
+    }
+    .project-card:hover .card-glow { opacity: 0.12; }
+
+    /* specific themes */
+    .card-tv:hover { border-color: var(--gold-bd); }
+    .card-tv .card-glow { background: var(--gold); }
+    .icon-tv  { background:var(--gold-lo); color:var(--gold); }
+    .t-tv   { color:rgba(239,159,39,0.75);  border-color:rgba(239,159,39,0.22); background:rgba(239,159,39,0.06); }
+    
+    .card-vpn:hover { border-color: var(--sky-bd); }
+    .card-vpn .card-glow { background: var(--sky); }
+    .icon-vpn { background:var(--sky-lo);  color:var(--sky); }
+    .t-vpn  { color:rgba(55,138,221,0.75);  border-color:rgba(55,138,221,0.22); background:rgba(55,138,221,0.06); }
+    
+    .card-quiz:hover { border-color: var(--em-bd); }
+    .card-quiz .card-glow { background: var(--em); }
+    .icon-quiz{ background:var(--em-lo);   color:var(--em); }
+    .t-quiz { color:rgba(29,158,117,0.75);  border-color:rgba(29,158,117,0.22); background:rgba(29,158,117,0.06); }
+
+    /* ── Image Section ── */
+    .p-image {
+      flex: 1.1;
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.3);
+      border: 0.5px solid rgba(255,255,255,0.05);
+      aspect-ratio: 16 / 10;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .p-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+    }
+    .project-card:hover .p-image img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    .img-placeholder-text {
+      position: absolute;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 28px;
+      letter-spacing: 4px;
+      color: var(--muted);
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    /* ── Content Section ── */
+    .p-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+    }
+    
+    .p-head {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .p-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .p-icon svg { width: 28px; height: 28px; }
+    
+    .p-title-wrap { display: flex; flex-direction: column; }
+    .p-name {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .p-name-en {
+      font-size: 13px;
+      color: var(--dim);
+      font-weight: 400;
+      margin-top: 4px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .p-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    .p-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+      direction: ltr;
+      justify-content: flex-end;
+    }
+    .tag {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 0.5px solid rgba(255,255,255,0.09);
+      color: var(--dim);
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .p-links {
+      display: flex;
+      gap: 12px;
+      direction: ltr;
+      justify-content: flex-end;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 600;
+      border: 0.5px solid;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    .btn-tv { color: var(--gold); border-color: var(--gold-bd); background: var(--gold-lo); }
+    .btn-tv:hover { background: rgba(239,159,39,0.2); border-color: var(--gold); }
+
+    .btn-vpn { color: var(--sky); border-color: var(--sky-bd); background: var(--sky-lo); }
+    .btn-vpn:hover { background: rgba(55,138,221,0.2); border-color: var(--sky); }
+
+    .btn-quiz { color: var(--em); border-color: var(--em-bd); background: var(--em-lo); }
+    .btn-quiz:hover { background: rgba(29,158,117,0.2); border-color: var(--em); }
+
+    .btn-ghost {
+      color: var(--muted);
+      border-color: var(--bd);
+      background: transparent;
+    }
+    .btn-ghost:hover {
+      border-color: var(--bd-h);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .footer {
+      text-align:center;
+      padding:32px 0 64px;
+      border-top:0.5px solid var(--bd);
+    }
+    .footer-brand {
+      font-family:'Bebas Neue',cursive;
+      font-size:24px;
+      letter-spacing:4px;
+      color:var(--gold);
+      opacity:0.6;
+      margin-bottom:8px;
+    }
+    .footer-copy {
+      font-size:13px;
+      color:var(--dim);
+    }
+
+    /* ══════════════════════════════
+       ENTRANCE ANIMATION
+    ══════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(30px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .hero        { animation:fadeUp 0.7s ease both; }
+    .stats       { animation:fadeUp 0.7s 0.15s ease both; }
+    .sec-head    { animation:fadeUp 0.7s 0.2s ease both; }
+    .project-card{ animation:fadeUp 0.6s ease both; }
+    .project-card:nth-child(1) { animation-delay:0.3s; }
+    .project-card:nth-child(2) { animation-delay:0.4s; }
+    .project-card:nth-child(3) { animation-delay:0.5s; }
+
+    @media(max-width:900px){
+      .project-card, .project-card.reverse {
+        flex-direction: column;
+        padding: 24px;
+        gap: 32px;
+      }
+      .p-image { width: 100%; aspect-ratio: 16/10; }
+      .p-content { width: 100%; }
+      .p-tags, .p-links { justify-content: flex-start; flex-direction: row-reverse; }
+      .p-name-en { text-align: left; }
+    }
+    @media(max-width:600px){
+      .hero { padding:72px 0 48px; }
+      .stats { gap:32px; }
+      .p-name { font-size: 22px; }
+      .p-icon { width: 48px; height: 48px; }
+      .p-icon svg { width: 24px; height: 24px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      AVAILABLE FOR WORK
+    </div>
+    <h1 class="hero-brand">7𝖊$𝖊𝒏</h1>
+    <p class="hero-sub">APPS · تطبيقات</p>
+    <div class="hero-line"></div>
+    <p class="hero-desc">مجموعة تطبيقات مبنية بأحدث التقنيات، تجمع بين الأداء العالي وتجربة مستخدم سلسة وأنيقة</p>
+  </div>
+
+  <!-- ── Stats ── -->
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-num">3+</div>
+      <div class="stat-label">تطبيقات مكتملة</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Flutter</div>
+      <div class="stat-label">التقنية الأساسية</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">AR</div>
+      <div class="stat-label">دعم كامل للعربية</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">مشاريع قادمة</div>
+    </div>
+  </div>
+
+  <!-- ── Section header ── -->
+  <div class="sec-head">
+    <div class="sec-line"></div>
+    <span class="sec-label">MY PROJECTS</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <!-- ── Projects List ── -->
+  <div class="projects-list">
+
+    <!-- 7esen TV -->
+    <div class="project-card card-tv">
+      <div class="card-glow"></div>
+      
+      <!-- Image Placeholder -->
+      <div class="p-image">
+        <div class="img-placeholder-text">7esen TV Image</div>
+        <!-- أضف مسار الصورة هنا -->
+        <!-- <img src="tv-app-preview.jpg" alt="7esen TV Preview" /> -->
+      </div>
+
+      <div class="p-content">
+        <div class="p-head">
+          <div class="p-icon icon-tv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="p-title-wrap">
+            <div class="p-name">7esen TV</div>
+            <div class="p-name-en">Live Sports &amp; Streaming</div>
+          </div>
+        </div>
+        <p class="p-desc">
+          تطبيق مخصص لمتابعة البث المباشر للمباريات والمحتوى الرياضي، بتصميم عصري وسهل الاستخدام. يدعم مشاهدة بجودة عالية مع تنظيم القنوات حسب التصنيفات، وتحديثات فورية للمحتوى. الباك اند مبني على Strapi وإدارة الروابط عبر Node.js.
+        </p>
+        <div class="p-tags">
+          <span class="tag t-tv">Flutter</span>
+          <span class="tag t-tv">Strapi</span>
+          <span class="tag t-tv">Node.js</span>
+          <span class="tag">Live Stream</span>
+          <span class="tag">HLS</span>
+        </div>
+        <div class="p-links">
+          <a href="#" class="btn btn-tv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            معاينة التطبيق
+          </a>
+          <!-- زر إضافي لو حبيت تضيف رابط للموقع -->
+          <!-- <a href="#" class="btn btn-ghost">زيارة الموقع</a> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- VPN App -->
+    <div class="project-card card-vpn reverse">
+      <div class="card-glow"></div>
+
+      <!-- Image Placeholder -->
+      <div class="p-image">
+        <div class="img-placeholder-text">VPN App Image</div>
+        <!-- أضف مسار الصورة هنا -->
+        <!-- <img src="vpn-app-preview.jpg" alt="VPN App Preview" /> -->
+      </div>
+
+      <div class="p-content">
+        <div class="p-head">
+          <div class="p-icon icon-vpn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="p-title-wrap">
+            <div class="p-name">VPN App</div>
+            <div class="p-name-en">Secure &amp; Fast Connection</div>
+          </div>
+        </div>
+        <p class="p-desc">
+          تطبيق VPN مطوَّر بـ Flutter يعمل بتقنية V2Ray ويدعم SNI لتجاوز الحجب وتأمين الاتصال. يحتوي على نظام إدارة بروفايلات، فحص سرعة مدمج، تحديث تلقائي، وإشعارات Firebase. تصميم عصري مع دعم الوضع الليلي.
+        </p>
+        <div class="p-tags">
+          <span class="tag t-vpn">Flutter</span>
+          <span class="tag t-vpn">V2Ray</span>
+          <span class="tag t-vpn">Firebase</span>
+          <span class="tag">SNI</span>
+          <span class="tag">Dark Mode</span>
+        </div>
+        <div class="p-links">
+          <a href="#" class="btn btn-vpn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            معاينة التطبيق
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz App -->
+    <div class="project-card card-quiz">
+      <div class="card-glow"></div>
+
+      <!-- Image Placeholder -->
+      <div class="p-image">
+        <div class="img-placeholder-text">Quiz App Image</div>
+        <!-- أضف مسار الصورة هنا -->
+        <!-- <img src="quiz-app-preview.jpg" alt="Quiz App Preview" /> -->
+      </div>
+
+      <div class="p-content">
+        <div class="p-head">
+          <div class="p-icon icon-quiz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="p-title-wrap">
+            <div class="p-name">كراسة الألعاب</div>
+            <div class="p-name-en">Quiz &amp; Trivia Game</div>
+          </div>
+        </div>
+        <p class="p-desc">
+          تطبيق ترفيهي مبني بـ Flutter، يتيح إنشاء مسابقات بين 1 إلى 10 لاعبين مع حفظ أسمائهم. يدعم معلومات عامة، أفلام، موسيقى، ألغاز، وكلمات. نظام بطاقات صفراء وحمراء لخصم النقاط مع ترتيب النتائج النهائية.
+        </p>
+        <div class="p-tags">
+          <span class="tag t-quiz">Flutter</span>
+          <span class="tag t-quiz">Arabic</span>
+          <span class="tag">Multiplayer</span>
+          <span class="tag">Offline</span>
+          <span class="tag">10 Players</span>
+        </div>
+        <div class="p-links">
+          <a href="#" class="btn btn-quiz">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            معاينة التطبيق
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Footer ── -->
+  <div class="footer">
+    <div class="footer-brand">7𝖊$𝖊𝒏</div>
+    <p class="footer-copy">جميع الحقوق محفوظة · Built with Flutter &amp; ❤</p>
+  </div>
+
+</div>
+</body>
+</html>
