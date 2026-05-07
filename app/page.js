@@ -17,6 +17,21 @@ export default function Home() {
       reverse: false,
     },
     {
+      id: "iwaa",
+      title: "إيواء - Iwaa",
+      titleEn: "Mental Health Platform",
+      description: "منصة عربية متكاملة للصحة النفسية، توفر بيئة رقمية آمنة تربط المستخدمين بنخبة من المتخصصين النفسيين. يتيح النظام تجربة علاجية متكاملة بدءاً من حجز المواعيد، مروراً بالمحادثات الفورية (Chat) المزودة بستيكرز مخصصة، وصولاً إلى جلسات الفيديو المباشرة بجودة عالية. تتميز المنصة بوجود ثلاث لوحات تحكم مستقلة (للإدارة، للمتخصصين، وللمستخدمين) لإدارة الجلسات، الكورسات التعليمية، والمدفوعات بدقة متناهية. تم بناء المشروع بأحدث التقنيات لضمان السرعة والأمان (Next.js 16, Express, Supabase).",
+      tags: ["Next.js 16", "Express", "Supabase", "Video Sessions", "Mental Health"],
+      iconClass: "icon-iwaa",
+      themeClass: "card-iwaa",
+      images: ["/iwaa-1.jpg", "/iwaa-2.jpg", "/iwaa-3.jpg", "/iwaa-4.jpg", "/iwaa-5.jpg"],
+      icon: (
+        <img src="/iwaa-logo.png" alt="Iwaa Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
+      ),
+      reverse: true,
+      link: "https://iwaaforyou.com"
+    },
+    {
       id: "tv",
       title: "7esen TV",
       titleEn: "Live Sports & Streaming",
@@ -28,7 +43,7 @@ export default function Home() {
       icon: (
         <img src="/tv-logo.jpg" alt="7eSen TV Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
       ),
-      reverse: true,
+      reverse: false,
     },
     {
       id: "vpn",
@@ -42,7 +57,7 @@ export default function Home() {
       icon: (
         <img src="/vpn-logo.jpg" alt="WaledNet VPN Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
       ),
-      reverse: false,
+      reverse: true,
     },
     {
       id: "quiz",
@@ -56,7 +71,7 @@ export default function Home() {
       icon: (
         <img src="/quiz-logo.png" alt="كازينو الألعاب Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
       ),
-      reverse: true,
+      reverse: false,
     },
   ];
 

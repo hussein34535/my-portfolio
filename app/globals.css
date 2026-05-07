@@ -24,6 +24,9 @@
   --hwasi:    #C5A880;
   --hwasi-lo: rgba(197, 168, 128, 0.12);
   --hwasi-bd: rgba(197, 168, 128, 0.30);
+  --iwaa:     #df5b4e;
+  --iwaa-lo:  rgba(223, 91, 78, 0.12);
+  --iwaa-bd:  rgba(223, 91, 78, 0.30);
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -251,6 +254,11 @@ body::after {
 .icon-hwasi { background:var(--hwasi-lo); color:var(--hwasi); }
 .t-hwasi { color:rgba(197, 168, 128,0.75); border-color:rgba(197, 168, 128,0.22); background:rgba(197, 168, 128,0.06); }
 
+.card-iwaa:hover { border-color: var(--iwaa-bd); }
+.card-iwaa .card-glow { background: var(--iwaa); }
+.icon-iwaa { background:var(--iwaa-lo); color:var(--iwaa); }
+.t-iwaa { color:rgba(223, 91, 78,0.75); border-color:rgba(223, 91, 78,0.22); background:rgba(223, 91, 78,0.06); }
+
 /* ── Image Section ── */
 .p-image {
   flex: 1.1;
@@ -385,6 +393,9 @@ body::after {
 
 .btn-hwasi { color: var(--hwasi); border-color: var(--hwasi-bd); background: var(--hwasi-lo); }
 .btn-hwasi:hover { background: rgba(197, 168, 128,0.2); border-color: var(--hwasi); }
+
+.btn-iwaa { color: var(--iwaa); border-color: var(--iwaa-bd); background: var(--iwaa-lo); }
+.btn-iwaa:hover { background: rgba(223, 91, 78,0.2); border-color: var(--iwaa); }
 
 .btn-ghost {
   color: var(--muted);

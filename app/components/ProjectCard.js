@@ -8,6 +8,7 @@ export default function ProjectCard({
   iconClass,
   themeClass,
   reverse = false,
+  link = "#",
   imageSrc,
   images = [],
 }) {
@@ -51,7 +52,7 @@ export default function ProjectCard({
           ))}
         </div>
         <div className="p-links">
-          <a href="#" className={`btn ${themeClass.replace('card-', 'btn-')}`}>
+          <a href={link} target={link !== "#" ? "_blank" : undefined} rel="noopener noreferrer" className={`btn ${themeClass.replace('card-', 'btn-')}`}>
             <svg
               viewBox="0 0 24 24"
               fill="none"
