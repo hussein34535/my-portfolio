@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
 export default function ProjectCard({
   id,
   title,
@@ -12,6 +16,50 @@ export default function ProjectCard({
   imageSrc,
   images = [],
 }) {
+  const scrollRef = useRef(null);
+  const autoScrollTimer = useRef(null);
+  const pauseTimeout = useRef(null);
+
+  const startAutoScroll = () => {
+    stopAutoScroll();
+    autoScrollTimer.current = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        let newScroll = scrollLeft + 220; // approximate width to scroll
+        if (newScroll >= maxScroll - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollTo({ left: newScroll, behavior: "smooth" });
+        }
+      }
+    }, 3000);
+  };
+
+  const stopAutoScroll = () => {
+    if (autoScrollTimer.current) clearInterval(autoScrollTimer.current);
+  };
+
+  const handleInteraction = () => {
+    stopAutoScroll();
+    if (pauseTimeout.current) clearTimeout(pauseTimeout.current);
+    
+    pauseTimeout.current = setTimeout(() => {
+      startAutoScroll();
+    }, 20000); // Resume after 20 seconds
+  };
+
+  useEffect(() => {
+    if (images.length > 0) {
+      startAutoScroll();
+    }
+    return () => {
+      stopAutoScroll();
+      if (pauseTimeout.current) clearTimeout(pauseTimeout.current);
+    };
+  }, [images.length]);
+
   return (
     <div className={`project-card ${themeClass} ${reverse ? "reverse" : ""}`}>
       <div className="card-glow"></div>
@@ -19,7 +67,13 @@ export default function ProjectCard({
       {/* Image Section */}
       <div className="p-image-container">
         {images.length > 0 ? (
-          <div className="mobile-screens-scroll">
+          <div 
+            className="mobile-screens-scroll" 
+            ref={scrollRef}
+            onTouchStart={handleInteraction}
+            onMouseDown={handleInteraction}
+            onWheel={handleInteraction}
+          >
             {images.map((src, idx) => (
               <img key={idx} src={src} alt={`${title} Preview ${idx + 1}`} className="mobile-screen" />
             ))}
