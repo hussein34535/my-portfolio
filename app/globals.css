@@ -522,6 +522,33 @@ body::after {
   transform: translateY(-5px) scale(1.02);
 }
 
+/* ISLAMY */
+.card-islamy {
+  --theme-main: #10b981;
+  --theme-light: rgba(16, 185, 129, 0.15);
+  --theme-glow: rgba(16, 185, 129, 0.4);
+}
+.icon-islamy {
+  background: rgba(0, 61, 48, 0.8);
+  color: var(--theme-main);
+  box-shadow: 0 0 15px var(--theme-glow);
+}
+.btn-islamy {
+  background: var(--theme-light);
+  color: #fff;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.btn-islamy:hover {
+  background: var(--theme-main);
+  box-shadow: 0 0 20px var(--theme-glow);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+.t-islamy {
+  background: var(--theme-light);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
 @media(max-width: 900px){
   .p-image-container { width: 100%; }
   .mobile-screen { width: 150px; }

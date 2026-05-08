@@ -89,6 +89,21 @@ export default function Home() {
         { text: "تحميل التطبيق", url: "https://www.mediafire.com/file/4kc6gmd8td1rblk/xo.apk/file", type: "app" }
       ]
     },
+    {
+      id: "islamy",
+      title: "إسلامي - Islamy",
+      titleEn: "Comprehensive Islamic App",
+      description: "تطبيق إسلامي شامل مبني بـ Flutter، يقدم تجربة روحانية متكاملة. يحتوي على القرآن الكريم مع التلاوات الصوتية، أوقات الصلاة والتنبيهات (الأذان)، وتحديد دقيق لاتجاه القبلة باستخدام GPS. كما يوفر واجهات عصرية ومتحركة تضمن تجربة مستخدم مريحة.",
+      tags: ["Flutter", "Quran", "Prayer Times", "Qibla", "Audio"],
+      iconClass: "icon-islamy",
+      themeClass: "card-islamy",
+      images: [],
+      icon: (
+        <img src="/islamy-logo.jpg" alt="Islamy Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
+      ),
+      reverse: true,
+      links: []
+    },
   ];
 
   return (
