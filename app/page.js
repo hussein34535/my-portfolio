@@ -97,7 +97,7 @@ export default function Home() {
       tags: ["Flutter", "Quran", "Prayer Times", "Qibla", "Audio"],
       iconClass: "icon-islamy",
       themeClass: "card-islamy",
-      images: [],
+      images: ["/islamy-1.jpg", "/islamy-2.jpg", "/islamy-3.jpg", "/islamy-4.jpg", "/islamy-5.jpg"],
       icon: (
         <img src="/islamy-logo.jpg" alt="Islamy Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
       ),
