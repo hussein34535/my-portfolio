@@ -50,6 +50,10 @@ export default function Home() {
         <img src="/tv-logo.jpg" alt="7eSen TV Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
       ),
       reverse: false,
+      links: [
+        { text: "زيارة الموقع", url: "https://7esentv.com", type: "web" },
+        { text: "تحميل التطبيق", url: "https://www.mediafire.com/file/a17ejs5ob76x7ns/hesentv.apk/file", type: "app" }
+      ]
     },
     {
       id: "vpn",
