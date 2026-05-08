@@ -129,13 +129,20 @@ body::after {
   opacity: 0.5;
 }
 
+.hero-desc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
 .hero-desc {
   font-size: 16px;
   color: var(--muted);
-  max-width: 480px;
-  margin: 0 auto;
   line-height: 1.85;
   font-weight: 300;
+  text-align: center;
 }
 
 /* ══════════════════════════════

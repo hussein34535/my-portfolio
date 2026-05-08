@@ -86,9 +86,14 @@ export default function Home() {
         <h1 className="hero-brand">7𝖊$𝖊𝒏</h1>
         <p className="hero-sub">APPS · تطبيقات</p>
         <div className="hero-line"></div>
-        <p className="hero-desc">
-          مجموعة تطبيقات مبنية بأحدث التقنيات، تجمع بين الأداء العالي وتجربة مستخدم سلسة وأنيقة
-        </p>
+        <div className="hero-desc-container">
+          <p className="hero-desc">
+            أنا حسين، مطور تطبيقات مصري (Mobile App Developer)، متخصص في بناء حلول برمجية متكاملة للموبايل والويب باستخدام تقنيات حديثة مثل Flutter، Next.js، و Node.js.
+          </p>
+          <p className="hero-desc">
+            خلال مسيرتي، قمت بتطوير مشاريع متنوعة تجمع بين الأداء العالي وتجربة المستخدم السلسة، بدءاً من منصات متكاملة مثل (Iwaa)، وصولاً إلى تطبيقات البث والأدوات التقنية. وإلى جانب الجانب التقني، أنا مؤسس وأدير علامتي التجارية الخاصة (hwasi)، مما يمنحني عقلية تجارية (Business Mindset) تتيح لي فهم متطلبات السوق بدقة، وتحويل الأفكار إلى منتجات تقنية ناجحة وقابلة للتوسع.
+          </p>
+        </div>
       </div>
 
       {/* ── Stats ── */}
