@@ -64,6 +64,9 @@ export default function Home() {
         <img src="/vpn-logo.jpg" alt="WaledNet VPN Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
       ),
       reverse: true,
+      links: [
+        { text: "تحميل التطبيق", url: "https://www.mediafire.com/file/6fqtrk3azkfz62p/WaledNet.apk/file", type: "app" }
+      ]
     },
     {
       id: "quiz",
