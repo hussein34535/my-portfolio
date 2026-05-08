@@ -12,9 +12,13 @@ export default function Home() {
       themeClass: "card-hwasi",
       images: ["/hwasi-1.jpg", "/hwasi-2.jpg", "/hwasi-3.jpg", "/hwasi-4.jpg", "/hwasi-5.jpg"],
       icon: (
-        <img src="/hwasi-logo.png" alt="hwasi Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
+        <img src="/hwasi-logo.png" alt="hwasi Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
       ),
       reverse: false,
+      links: [
+        { text: "زيارة الموقع", url: "https://hwasi.com", type: "web" },
+        { text: "تحميل التطبيق", url: "https://www.mediafire.com/file/jbxadqkudb9fsce/hwasi.apk/file", type: "app" }
+      ]
     },
     {
       id: "iwaa",
@@ -26,10 +30,12 @@ export default function Home() {
       themeClass: "card-iwaa",
       images: ["/iwaa-1.jpg", "/iwaa-2.jpg", "/iwaa-3.jpg", "/iwaa-4.jpg", "/iwaa-5.jpg", "/iwaa-6.jpg", "/iwaa-7.jpg", "/iwaa-8.jpg", "/iwaa-9.jpg", "/iwaa-10.jpg"],
       icon: (
-        <img src="/iwaa-logo.png" alt="Iwaa Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
+        <img src="/iwaa-logo.png" alt="Iwaa Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
       ),
       reverse: true,
-      link: "https://iwaaforyou.com"
+      links: [
+        { text: "زيارة المنصة", url: "https://iwaaforyou.com", type: "web" }
+      ]
     },
     {
       id: "tv",
@@ -41,7 +47,7 @@ export default function Home() {
       themeClass: "card-tv",
       images: ["/tv-1.jpg", "/tv-2.jpg", "/tv-3.jpg", "/tv-4.jpg", "/tv-5.jpg"],
       icon: (
-        <img src="/tv-logo.jpg" alt="7eSen TV Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
+        <img src="/tv-logo.jpg" alt="7eSen TV Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
       ),
       reverse: false,
     },
@@ -55,7 +61,7 @@ export default function Home() {
       themeClass: "card-vpn",
       images: ["/vpn-1.jpg", "/vpn-2.jpg", "/vpn-3.jpg", "/vpn-4.jpg", "/vpn-5.jpg"],
       icon: (
-        <img src="/vpn-logo.jpg" alt="WaledNet VPN Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
+        <img src="/vpn-logo.jpg" alt="WaledNet VPN Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
       ),
       reverse: true,
     },
@@ -69,9 +75,12 @@ export default function Home() {
       themeClass: "card-quiz",
       images: ["/quiz-1.jpg", "/quiz-2.jpg", "/quiz-3.jpg", "/quiz-4.jpg", "/quiz-5.jpg", "/quiz-6.jpg", "/quiz-7.jpg", "/quiz-8.jpg"],
       icon: (
-        <img src="/quiz-logo.png" alt="كازينو الألعاب Logo" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"8px"}} />
+        <img src="/quiz-logo.png" alt="كازينو الألعاب Logo" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} />
       ),
       reverse: false,
+      links: [
+        { text: "تحميل التطبيق", url: "https://www.mediafire.com/file/4kc6gmd8td1rblk/xo.apk/file", type: "app" }
+      ]
     },
   ];
 
