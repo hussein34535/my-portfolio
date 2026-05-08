@@ -98,8 +98,8 @@ export default function Home() {
           <div className="stat-label">تطبيق وموقع</div>
         </div>
         <div className="stat-item">
-          <div className="stat-num">Flutter</div>
-          <div className="stat-label">التقنية الأساسية</div>
+          <div className="stat-num">Flutter & Next.js</div>
+          <div className="stat-label">التقنيات الأساسية</div>
         </div>
         <div className="stat-item">
           <div className="stat-num">AR</div>
