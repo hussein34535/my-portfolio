@@ -135,6 +135,7 @@ body::after {
   gap: 16px;
   max-width: 650px;
   margin: 0 auto;
+  direction: rtl;
 }
 
 .hero-desc {
@@ -143,6 +144,11 @@ body::after {
   line-height: 1.85;
   font-weight: 300;
   text-align: center;
+}
+
+.hero-highlight {
+  color: var(--gold);
+  font-weight: 500;
 }
 
 /* ══════════════════════════════

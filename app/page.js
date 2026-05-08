@@ -88,10 +88,10 @@ export default function Home() {
         <div className="hero-line"></div>
         <div className="hero-desc-container">
           <p className="hero-desc">
-            أنا حسين، مطور تطبيقات مصري (Mobile App Developer)، متخصص في بناء حلول برمجية متكاملة للموبايل والويب باستخدام تقنيات حديثة مثل Flutter، Next.js، و Node.js.
+            أنا حسين، مطور تطبيقات مصري (Mobile App Developer)، متخصص في بناء حلول برمجية متكاملة للموبايل والويب باستخدام تقنيات حديثة مثل <span className="hero-highlight">Flutter</span>، <span className="hero-highlight">Next.js</span>، و <span className="hero-highlight">Node.js</span>.
           </p>
           <p className="hero-desc">
-            خلال مسيرتي، قمت بتطوير مشاريع متنوعة تجمع بين الأداء العالي وتجربة المستخدم السلسة، بدءاً من منصات متكاملة مثل (Iwaa)، وصولاً إلى تطبيقات البث والأدوات التقنية. وإلى جانب الجانب التقني، أنا مؤسس وأدير علامتي التجارية الخاصة (hwasi)، مما يمنحني عقلية تجارية (Business Mindset) تتيح لي فهم متطلبات السوق بدقة، وتحويل الأفكار إلى منتجات تقنية ناجحة وقابلة للتوسع.
+            خلال مسيرتي، قمت بتطوير مشاريع متنوعة تجمع بين الأداء العالي وتجربة المستخدم السلسة، بدءاً من منصات متكاملة مثل (<span className="hero-highlight">Iwaa</span>)، وصولاً إلى تطبيقات البث والأدوات التقنية. وإلى جانب الجانب التقني، أنا مؤسس وأدير علامتي التجارية الخاصة (<span className="hero-highlight">hwasi</span>)، مما يمنحني عقلية تجارية (Business Mindset) تتيح لي فهم متطلبات السوق بدقة، وتحويل الأفكار إلى منتجات تقنية ناجحة وقابلة للتوسع.
           </p>
         </div>
       </div>
